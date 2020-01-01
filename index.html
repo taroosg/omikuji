@@ -9,9 +9,11 @@
 </head>
 
 <body>
-  <h1>おみくじ</h1>
-  <p>結果</p>
-  <p id="echo"></p>
+  <fieldset>
+    <legend>おみくじ</legend>
+    <p id="echo">結果</p>
+  </fieldset>
+
   <script>
 
     const okimari = [...new Array(2).fill('おきまり結婚')];
@@ -22,11 +24,11 @@
     const hougaku3 = [...new Array(10).fill('運命の人の方向：南南西')];
     const hougaku4 = [...new Array(10).fill('運命の人の方向：西南西')];
     const totalArray = [...okimari, ...yuuki, ...manaty, ...hougaku1, ...hougaku2, ...hougaku3, ...hougaku4]
-    console.log(totalArray);
+
     const generateOmikuji = (min, max) => {
       return ~~(Math.random() * (max - min + 1) + min);
     };
-    console.log(generateOmikuji(0, totalArray.length));
+
     document.getElementById('echo').innerHTML = totalArray[generateOmikuji(0, totalArray.length - 1)]
 
   </script>
